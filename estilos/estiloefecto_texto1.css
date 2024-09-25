@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    }
+    .contenedor {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .contenedor_texto {
+        display: flex;
+        align-items: center;
+        width: 700px;
+        z-index: 1;
+    }
+    h1{
+        margin-right: 20px;
+    }
+    .contenedor_texto_animacion {
+        display: flex;
+    }
+    .barra_escritura {
+        width: 3px;
+        height: 7px;
+        margin-left: 5px;
+        background-color: black;
+        transform: rotateZ(10deg);
+        animation: barra-animacion 1s ease infinite;
+    }
+        /* barra de escritura de animación */
+    @keyframes barra-animacion {
+        50%{
+        height: 20px;
+        }
+    }

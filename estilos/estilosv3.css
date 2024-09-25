@@ -1,0 +1,495 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+/* Estilo para el menú de navegación */
+nav {
+    background-color: black;
+    width: 100%;
+    height: 60px;
+    padding-top: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 10; /* Asegura que el menú esté siempre encima del contenido */
+}
+
+nav ol {
+    margin: auto;
+    width: 800px;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+
+nav ol li {
+    display: inline-block;
+    padding: 8px 20px;
+    color: white;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+nav ol li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ol li a:hover {
+    font-size: xx-large;
+    color:white;
+    border-bottom-style: solid;
+    border-color:lightgreen;
+    border-width: 2px;
+    
+}
+
+/* Sección "Hola" */
+section {
+    width: 900px;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: white;
+    z-index: 1;
+}
+
+
+
+/* Logo y las fotos */
+.logo image{
+    width: 150px;
+}
+
+
+
+.misfotos {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    top: 100px;
+    left: 600px;
+}
+
+.misfotos img {
+    position: relative;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.misfotos img.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Video de fondo */
+#video-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+/* Contenedor general de la animación */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Ajusta según tu diseño */
+    margin-top: 100px; /* Espaciado superior para centrar la animación */
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Asegura que esté por encima de otros elementos como el video */
+}
+
+/* Contenedor de texto */
+.contenedor_texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo del texto principal (h1) */
+h1 {
+    font-size: 2.5rem; /* Tamaño del texto ajustable */
+    color: white;
+    margin-bottom: 10px; /* Espacio entre el título y la animación */
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 5px; /* Espaciado entre letras para dar más estilo */
+}
+h2{
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 75px;
+    padding-bottom: 11px;
+    margin-bottom: 11px;
+    border-bottom-style: solid;
+    border-color:lightgreen;
+    border-width: 2px;
+       
+}
+.hola {
+    padding-top: 300px;
+
+}
+
+/* Contenedor donde aparecerá el texto animado */
+.contenedor_texto_animacion {
+    font-size: 11rem; /* Ajusta según el tamaño del texto que deseas */
+    color: lightgreen; /* Cambia el color del texto animado */
+    font-family: 'Courier New', Courier, monospace; /* Tipo de letra estilo código */
+    letter-spacing: 3px; /* Espaciado entre las letras de la animación */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    overflow: hidden; /* Oculta cualquier texto que se desborde del contenedor */
+}
+
+/* Barra de escritura (simula el cursor de escritura) */
+.barra_escritura {
+    display: inline-block;
+    width: 11px;
+    height: 11rem; /* Ajusta la altura al tamaño del texto animado */
+    background-color: lightgreen; /* Color de la barra */
+    margin-left: 5px;
+    animation: barra-animacion 0.8s steps(1) infinite; /* Animación de parpadeo */
+}
+
+/* Animación de parpadeo de la barra */
+@keyframes barra-animacion {
+    50% {
+        opacity: 0; /* Hace que la barra desaparezca a la mitad de la animación */
+    }
+}
+/* efecto caja vacía */
+.dir{background-image: url(../imagenes/foto_elefantito_mano.jpg);
+    width: 100%;
+    height: 600px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover; 
+
+    }
+    /* efecto caja vacía */
+.form{background-image: url(../imagenes/foto_gatorobot.jpg);
+    width: 100%;
+    height: 600px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover; 
+
+    }
+
+
+/* Proyectos Grid */
+#misproyectos {    
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: -20px;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    object-fit: cover;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.5);
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.overlay span {
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de barra de escritura */
+.barra_escritura {
+    width: 3px;
+    height: 7px;
+   
+}
+/* iconos programas software */
+#iconos img{
+    height: 44px;
+    padding: 3px;
+    margin-top: 20px;
+    margin-right: 11px;
+    
+}
+
+
+
+#redessociales img{
+    padding: 3px;
+    margin-top: 20px;
+    margin-right: 11px;
+}
+legend{
+    text-align: left;
+    margin-top: 10px;
+    
+}
+
+label{
+    display: block;
+    padding: 3px;
+}
+
+#consultas{
+    width: 700px;
+    height: 70px;
+}
+#contacto #botonreg{
+    width: 111px;
+    height: 22px;
+    background-color: gainsboro;
+    box-shadow: 2px 2px 2px white;
+    
+}
+#contacto #botonreg:hover{
+    width: 122px;
+    height: 33px;
+    background-color: lightgreen;
+}
+
+/* Estilo para el ícono hamburguesa */
+#menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 11; /* Asegúrate que esté encima del contenido */
+}
+
+#menu-icon span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Media query para tablet */
+@media screen and (max-width: 1024px) {
+    /* Ajustes para navegación */
+    nav ol {
+        width: 90%;
+    }
+
+    nav ol li a {
+        font-size: 16px;
+    }
+
+    .logo img {
+        width: 200px;
+    }
+
+    .misfotos {
+        top: 200px;
+        left: 50px;
+        gap: 10px;
+    }
+
+    .misfotos img {
+        width: 100px;
+    }
+
+    #video-header {
+        height: 400px;
+    }
+
+    /* Ajustes para sección "Hola" */
+    h1 {
+        font-size: 2rem;
+    }
+
+    .contenedor_texto_animacion {
+        font-size: 5rem;
+    }
+
+    /* Ajustes para la sección Proyectos */
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .image-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Formulario */
+    #consultas {
+        width: 100%;
+    }
+
+    #botonreg {
+        width: 120px;
+        height: 35px;
+    }
+
+    #iconos img {
+        height: 40px;
+    }
+}
+/* Media query para smartphone */
+@media screen and (max-width: 768px) {
+    /* Mostrar el ícono del menú hamburguesa */
+    #menu-icon {
+        display: flex;
+    }
+   
+    /* Ocultar el menú original */
+    nav ol {
+        display: none;
+    }
+
+    /* Mostrar el menú cuando se haga clic en el icono */
+    nav ol.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color:black;
+    }
+
+    nav ol li {
+        padding: 15px 0;
+        
+    }
+
+    /* Ajustes para la sección principal */
+    section {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .logo img {
+        width: 120px;
+    }
+
+    .misfotos {
+        display: block;
+        top: 180px;
+        left: 20px;
+    }
+
+    .misfotos img {
+        width: 80px;
+    }
+
+    #video-header {
+        height: 300px;
+    }
+
+    /* Ajustes para la sección "Hola" */
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2{
+        font-size: 1.5rem;       
+           
+    }
+    /* efecto caja vacía */
+.dir{
+    height: 300px;
+    
+    background-size:contain; 
+    }
+    /* efecto caja vacía */
+.form{
+        height: 300px;
+   
+    background-size:contain; 
+    }
+
+    .contenedor_texto_animacion {
+        font-size: 3rem;
+    }
+
+    
+    /* Ajustes para la sección Proyectos */
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .image-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Formulario */
+    #consultas {
+        width: 100%;
+    }
+
+    #botonreg {
+        width: 100px;
+        height: 30px;
+    }
+
+    #iconos img {
+        height: 30px;
+    }
+}
